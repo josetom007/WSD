@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SNATCH Login</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --sunset-1: #43281f;
+            --sunset-2: #6b3f31;
+            --sunset-3: #cda78a;
+            --accent: #b3211b;
+            --eggshell: #F5EDE6;
+            --glass: rgba(255,255,255,0.1);
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(180deg, var(--sunset-1), var(--sunset-2), var(--sunset-3));
+            font-family: 'Poppins', sans-serif;
+            color: var(--eggshell);
+        }
+
+        .login-card {
+            width: 350px;
+            padding: 32px;
+            border-radius: 18px;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 14px 40px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .title {
+            font-size: 40px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 4px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            margin-bottom: 20px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            margin-top: 14px;
+            font-size: 14px;
+            background: rgba(255,255,255,0.13);
+            color: var(--eggshell);
+        }
+
+        input::placeholder { color: #f5ede6cc; }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 22px;
+            background: var(--accent);
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            background: #8f1916;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="login-card">
+    <div class="title">SNATCH</div>
+    <div class="subtitle">Welcome Back, Login Below</div>
+
+    <input type="text" id="email" placeholder="Enter Email">
+    <input type="password" id="pass" placeholder="Enter Password">
+
+    <button onclick="login()">Login</button>
+</div>
+
+
+<script>
+// -------------------------------
+// SNATCH AJAX LOGIN (NO JSON)
+// -------------------------------
+function login() {
+
+    var email = document.getElementById("email").value;
+    var pass = document.getElementById("pass").value;
+
+    if(email === "" || pass === ""){
+        alert("Enter email and password");
+        return;
+    }
+
+    // 1) Create XHR object
+    var xhr = new XMLHttpRequest();
+
+    // 2) Initialize request (read credentials.txt)
+    xhr.open("GET", "credentials.txt", true);
+
+    // 3) Callback
+    xhr.onreadystatechange = function() {
+
+        // 4) When request complete
+        if (xhr.readyState === 4 && xhr.status === 200) {
+
+            var data = xhr.responseText.trim();
+            var creds = data.split(",");
+
+            var correctEmail = creds[0];
+            var correctPass = creds[1];
+
+            if(email === correctEmail && pass === correctPass) {
+                alert("Login Successful!");
+
+                // Open SNATCH site in new tab
+                window.open("snatch.html", "_blank");
+            } else {
+                alert("Invalid Email or Password!");
+            }
+        }
+    };
+
+    // 5) Send request
+    xhr.send();
+}
+</script>
+
+</body>
+</html>

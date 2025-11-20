@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SNATCH © | Style Redefined</title>
+
+  <!-- BOOTSTRAP + FONTS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+      --bg1: #6b4423;
+      --bg2: #402419;
+      --bg3: #241510;
+      --highlight: #e8c39e;
+      --text-light: #ffffff;
+      --red: #c8291e;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      color: var(--text-light);
+      background: radial-gradient(circle at center, var(--bg1) 0%, var(--bg2) 45%, var(--bg3) 90%);
+      background-attachment: fixed;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    nav {
+      width: 100%;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      backdrop-filter: blur(8px);
+      background: rgba(20, 10, 7, 0.3);
+      z-index: 100;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      margin: 0 15px;
+      font-size: 15px;
+    }
+
+    nav a:hover { color: var(--red); }
+
+    .logo-area {
+      margin-top: 150px;
+      text-align: center;
+    }
+
+    .logo-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 65px;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+    }
+
+    #imageCarousel {
+      max-width: 600px;
+      margin: 40px auto;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 0 35px rgba(0,0,0,0.6);
+    }
+
+    .carousel-inner img {
+      height: 300px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    h2 {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 38px;
+      font-family: 'Playfair Display';
+    }
+
+    .card-box {
+      width: 70%;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      backdrop-filter: blur(6px);
+      color: white;
+    }
+
+    .card-box button {
+      background: var(--red);
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .card-box button:hover {
+      background: #a02017;
+    }
+
+    table {
+      margin: 40px auto;
+      width: 70%;
+      background: rgba(255,255,255,0.05);
+      border-collapse: collapse;
+      border-radius: 12px;
+      overflow: hidden;
+      backdrop-filter: blur(6px);
+    }
+
+    th, td {
+      padding: 15px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    th {
+      background: rgba(255,255,255,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      margin-top: 80px;
+      color: #c9b8a8;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo" style="font-size:22px; font-family:'Playfair Display';">SNATCH</div>
+    <div>
+      <a href="#">Home</a>
+      <a href="#">Customization</a>
+      <a href="#">Latest Arrivals</a>
+      <a href="#">Orders</a>
+      <a href="#">Shopping Cart</a>
+      <a href="#">Payment</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Feedback</a>
+    </div>
+  </nav>
+
+  <div class="logo-area">
+    <div class="logo-title">SNATCH</div>
+  </div>
+
+  <!-- CAROUSEL -->
+  <div id="imageCarousel" class="carousel slide" data-ride="carousel" data-interval="2500">
+    <ol class="carousel-indicators">
+      <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#imageCarousel" data-slide-to="1"></li>
+      <li data-target="#imageCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active"><img src="images/sh0.jpg"></div>
+      <div class="carousel-item"><img src="images/sh566.jpg"></div>
+      <div class="carousel-item"><img src="images/sh667.jpg"></div>
+    </div>
+
+    <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+
+    <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+
+
+  <!-- PRICE LIST -->
+  <h2>Price List</h2>
+  <table>
+    <tr><th>Product</th><th>Price (INR)</th></tr>
+    <tr><td>Oversized Shirts</td><td>1199</td></tr>
+    <tr><td>Cargo Pants</td><td>1499</td></tr>
+    <tr><td>Graphic Tees</td><td>899</td></tr>
+    <tr><td>Co-ord Sets</td><td>1899</td></tr>
+  </table>
+
+  <!-- PRICE CALCULATOR -->
+  <div class="card-box">
+    <h3 style="font-family:'Playfair Display';">Price Calculator</h3>
+    <select id="product">
+      <option value="1199">Oversized Shirt - 1199</option>
+      <option value="1499">Cargo Pants - 1499</option>
+      <option value="899">Graphic Tee - 899</option>
+      <option value="1899">Co-ord Set - 1899</option>
+    </select><br><br>
+    <input type="number" id="qty" value="1"><br><br>
+    <button onclick="calculate()">Calculate</button>
+    <p id="result"></p>
+  </div>
+
+  <!-- DISCOUNT CALC -->
+  <div class="card-box">
+    <h3 style="font-family:'Playfair Display';">Discount Calculator</h3>
+
+    <input type="checkbox" class="item" value="1199"> Oversized Shirt - 1199<br>
+    <input type="checkbox" class="item" value="1499"> Cargo Pants - 1499<br>
+    <input type="checkbox" class="item" value="899"> Graphic Tee - 899<br>
+    <input type="checkbox" class="item" value="1899"> Co-ord Set - 1899<br><br>
+
+    <input type="number" id="qty2" value="1"><br><br>
+    <button onclick="calculateDiscount()">Check Final Price</button>
+    <p id="discountResult"></p>
+  </div>
+
+
+  <!-- SHOPPING CART -->
+  <h2>Shopping Cart</h2>
+  <div class="card-box">
+    <h3 style="font-family:'Playfair Display';">Add Products to Cart</h3>
+
+    <select id="cartProduct">
+      <option value="Oversized Shirt,1199">Oversized Shirt - 1199</option>
+      <option value="Cargo Pants,1499">Cargo Pants - 1499</option>
+      <option value="Graphic Tee,899">Graphic Tee - 899</option>
+      <option value="Co-ord Set,1899">Co-ord Set - 1899</option>
+    </select>
+
+    <input type="number" id="cartQty" min="1" value="1" />
+
+    <button onclick="addToCart()">Add to Cart</button>
+
+    <h4>Items:</h4>
+    <ul id="cartList" style="list-style:none; padding-left:0; color:white;"></ul>
+
+    <h4 id="cartTotal" style="margin-top:15px;">Total: ₹0</h4>
+  </div>
+
+
+  <!-- FEEDBACK FORM -->
+  <h2>Feedback</h2>
+  <div class="card-box">
+    <h3 style="font-family:'PlayfairDisplay';">Your Feedback</h3>
+
+    <input type="text" id="fbName" placeholder="Your Name">
+    <input type="text" id="fbMsg" placeholder="Your Feedback">
+
+    <button onclick="sendFeedback()">Submit</button>
+    <p id="fbResult" style="margin-top:15px;"></p>
+  </div>
+
+
+  <footer>© 2025 SNATCH | Streetwear Store</footer>
+
+  <!-- BOOTSTRAP JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+<script>
+function calculate() {
+  var price = document.getElementById("product").value;
+  var qty = document.getElementById("qty").value;
+  var total = price * qty;
+  document.getElementById("result").innerHTML = "Total Price = <b>" + total + " INR</b>";
+}
+
+function calculateDiscount() {
+  var items = document.getElementsByClassName("item");
+  var qty = document.getElementById("qty2").value;
+  var total = 0;
+  for (var i=0;i<items.length;i++){
+    if(items[i].checked) total += parseInt(items[i].value)*qty;
+  }
+  let finalPrice = total;
+  let msg="";
+  if(total>=4000){ finalPrice=total*0.8; msg="🎉 20% OFF Applied!";}
+  else if(total>=2500){ finalPrice=total*0.9; msg="🔥 10% OFF Applied!";}
+  else if(total>0){ msg="No discount applied";}
+  else{ msg="❌ Select product";}
+  document.getElementById("discountResult").innerHTML=
+  "Total="+total+"<br>"+msg+"<br><b>Final Price="+finalPrice+" INR</b>";
+}
+
+// SHOPPING CART
+let cart=[];
+let cartTotal=0;
+
+function addToCart(){
+  let data=document.getElementById("cartProduct").value.split(",");
+  let name=data[0];
+  let price=parseInt(data[1]);
+  let qty=parseInt(document.getElementById("cartQty").value);
+  let itemTotal=price*qty;
+
+  cart.push(name+" x"+qty+" = ₹"+itemTotal);
+  cartTotal+=itemTotal;
+
+  document.getElementById("cartList").innerHTML="";
+  cart.forEach((i)=>{
+    let li=document.createElement("li");
+    li.innerHTML=i;
+    document.getElementById("cartList").appendChild(li);
+  });
+
+  document.getElementById("cartTotal").innerHTML="Total: ₹"+cartTotal;
+}
+
+// FEEDBACK AJAX
+function sendFeedback(){
+  var name=document.getElementById("fbName").value;
+  var msg=document.getElementById("fbMsg").value;
+
+  if(name=="" || msg==""){
+    alert("Enter both fields");
+    return;
+  }
+
+  var xhr=new XMLHttpRequest();
+  xhr.open("GET","feedback.txt",true);
+  xhr.onreadystatechange=function(){
+    if(xhr.readyState==4 && xhr.status==200){
+      document.getElementById("fbResult").innerHTML=
+      "Thank you "+name+"! Feedback saved.";
+    }
+  };
+  xhr.send();
+}
+</script>
+
+</body>
+</html>
