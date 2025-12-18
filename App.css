@@ -1,0 +1,39 @@
+.cover {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.cover h1 {
+    margin-bottom: 20px;
+}
+
+.cover h1 span {
+    color: #ff5733;
+}
+
+.cover input {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.cover button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+}
+
+.cover button:hover {
+    background-color: #45a049;
+}
